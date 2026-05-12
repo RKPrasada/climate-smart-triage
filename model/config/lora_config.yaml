@@ -1,0 +1,46 @@
+# QLoRA fine-tuning configuration
+# Minimum GPU: 6 GB VRAM (e.g. RTX 3060, cloud A10)
+
+base_model: "google/gemma-2b-it"
+output_dir: "./models/finetuned"
+
+lora:
+  r: 8
+  lora_alpha: 16
+  target_modules: ["q_proj", "v_proj"]
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+stages:
+  - name: clinical_alignment
+    data: "data/training_examples.jsonl"
+    filter_stage: clinical_alignment
+    epochs: 3
+    batch_size: 4
+    gradient_accumulation: 4
+    learning_rate: 2.0e-4
+    warmup_steps: 100
+    max_seq_length: 512
+
+  - name: climate_integration
+    data: "data/training_examples.jsonl"
+    filter_stage: climate_integration
+    checkpoint_from: clinical_alignment
+    epochs: 2
+    batch_size: 4
+    gradient_accumulation: 4
+    learning_rate: 1.0e-4
+    warmup_steps: 50
+    max_seq_length: 512
+
+quantization:
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: "float16"
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+
+optimizer: "paged_adamw_8bit"
+eval_steps: 50
+save_steps: 100
+save_total_limit: 3
+load_best_model_at_end: true

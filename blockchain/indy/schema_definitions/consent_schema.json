@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
+  "type": "JsonSchemaValidator2018",
+  "name": "ConsentCredential",
+  "version": "1.0",
+  "credentialSubject": {
+    "type": "object",
+    "required": [
+      "id",
+      "consentType",
+      "dataUsage",
+      "jurisdiction"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Household DID"
+      },
+      "consentType": {
+        "type": "string",
+        "enum": [
+          "health_data_collection",
+          "ai_triage_use",
+          "federated_learning",
+          "data_export"
+        ]
+      },
+      "dataUsage": {
+        "type": "string"
+      },
+      "jurisdiction": {
+        "type": "string"
+      },
+      "audioConsentHash": {
+        "type": "string",
+        "description": "SHA-256 of the Telugu audio consent recording"
+      }
+    }
+  }
+}

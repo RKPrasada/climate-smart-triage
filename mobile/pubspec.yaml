@@ -1,0 +1,24 @@
+name: climate_smart_triage
+description: Offline-first paediatric triage for climate-vulnerable communities
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.6.6
+  easy_localization: ^3.0.7
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  drift: ^2.16.0
+  http: ^1.2.1
+  flutter_tts: ^3.8.5
+  crypto: ^3.0.3
+  shared_preferences: ^2.2.3
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/translations/

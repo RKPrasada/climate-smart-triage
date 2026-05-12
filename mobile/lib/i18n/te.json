@@ -1,0 +1,49 @@
+{
+  "app_title": "క్లైమేట్ స్మార్ట్ ట్రైయేజ్",
+  "home": {
+    "greeting": "నమస్తే, {name}",
+    "climate_alert_title": "వాతావరణ హెచ్చరిక",
+    "new_triage": "కొత్త ట్రైయేజ్",
+    "view_history": "చరిత్ర",
+    "climate_data": "వాతావరణ డేటా"
+  },
+  "triage": {
+    "title": "శిశు ట్రైయేజ్",
+    "age_months": "వయస్సు (నెలలు)",
+    "weight_kg": "బరువు (కిలోలు)",
+    "temperature": "ఉష్ణోగ్రత (C)",
+    "respiratory_rate": "శ్వాస రేటు (నిమిషానికి)",
+    "heart_rate": "హృదయ స్పందన రేటు",
+    "chief_complaint": "ప్రధాన సమస్య",
+    "symptoms": "లక్షణాలు",
+    "submit": "AI ట్రైయేజ్ రన్ చేయండి",
+    "analysing": "విశ్లేషిస్తోంది..."
+  },
+  "symptoms": {
+    "fever": "జ్వరం",
+    "cough": "దగ్గు",
+    "diarrhea": "విరేచనాలు",
+    "vomiting": "వాంతులు",
+    "lethargy": "నీరసం",
+    "poor_feeding": "తక్కువ తినడం",
+    "rash": "చర్మపు దద్దుర్లు",
+    "convulsions": "మూర్ఛలు"
+  },
+  "results": {
+    "immediate": "వెంటనే ఆసుపత్రికి పంపండి",
+    "urgent": "అత్యవసరం — 2 గంటల్లో పంపండి",
+    "green": "ఇంటి చికిత్స",
+    "reasoning": "కారణం",
+    "action": "చర్య"
+  },
+  "consent": {
+    "title": "డేటా అనుమతి",
+    "body": "మీ ఆరోగ్య సమాచారం మీకే చెందుతుంది.",
+    "agree": "అంగీకరిస్తున్నాను",
+    "withdraw": "అనుమతి రద్దు చేయండి"
+  },
+  "offline": {
+    "banner": "ఆఫ్‌లైన్‌లో పని చేస్తోంది",
+    "sync_pending": "{n} రికార్డులు పెండింగ్‌లో ఉన్నాయి"
+  }
+}

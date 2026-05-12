@@ -1,0 +1,49 @@
+{
+  "app_title": "ClimateSmartTriage",
+  "home": {
+    "greeting": "Hello, {name}",
+    "climate_alert_title": "Climate Alert",
+    "new_triage": "New Triage",
+    "view_history": "History",
+    "climate_data": "Climate Data"
+  },
+  "triage": {
+    "title": "Paediatric Triage",
+    "age_months": "Age (months)",
+    "weight_kg": "Weight (kg)",
+    "temperature": "Temperature (C)",
+    "respiratory_rate": "Respiratory rate (breaths/min)",
+    "heart_rate": "Heart rate (bpm)",
+    "chief_complaint": "Chief complaint",
+    "symptoms": "Symptoms",
+    "submit": "Run AI Triage",
+    "analysing": "Analysing..."
+  },
+  "symptoms": {
+    "fever": "Fever",
+    "cough": "Cough",
+    "diarrhea": "Diarrhoea",
+    "vomiting": "Vomiting",
+    "lethargy": "Lethargy",
+    "poor_feeding": "Poor feeding",
+    "rash": "Rash",
+    "convulsions": "Convulsions"
+  },
+  "results": {
+    "immediate": "Immediate Referral Required",
+    "urgent": "Urgent — Refer Within 2 Hours",
+    "green": "Home Care",
+    "reasoning": "Reasoning",
+    "action": "Action"
+  },
+  "consent": {
+    "title": "Data Consent",
+    "body": "Your health data belongs to you. We only collect what you agree to share.",
+    "agree": "I agree",
+    "withdraw": "Withdraw consent"
+  },
+  "offline": {
+    "banner": "Working offline",
+    "sync_pending": "{n} records waiting to sync"
+  }
+}

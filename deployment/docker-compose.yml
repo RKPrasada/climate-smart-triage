@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+
+  api:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile.api
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_URL: postgresql://cst:cst@db:5432/cst
+      REDIS_URL:    redis://redis:6379/0
+      OLLAMA_BASE:  http://ollama:11434
+    depends_on: [db, redis, ollama]
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER:     cst
+      POSTGRES_PASSWORD: cst
+      POSTGRES_DB:       cst
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+
+  celery:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile.api
+    command: celery -A backend.federated.aggregator worker --loglevel=info
+    environment:
+      REDIS_URL: redis://redis:6379/0
+    depends_on: [redis]
+    restart: unless-stopped
+
+volumes:
+  ollama_models:
+  postgres_data:
